@@ -1,0 +1,33 @@
+#pragma once
+
+//
+// SPLIT
+//
+#define SPLIT_HAND_PIN B5
+#define SPLIT_LAYER_STATE_ENABLE
+#define SPLIT_LED_STATE_ENABLE
+#define SPLIT_OLED_ENABLE
+
+//
+// ENCODER - single encoder on right side
+//
+#define ENCODERS_PAD_A { }
+#define ENCODERS_PAD_B { }
+#define ENCODER_RESOLUTIONS { }
+#undef ENCODERS_PAD_A_RIGHT
+#define ENCODERS_PAD_A_RIGHT { F4 }
+#undef ENCODERS_PAD_B_RIGHT
+#define ENCODERS_PAD_B_RIGHT { F5 }
+#undef ENCODER_RESOLUTIONS_RIGHT
+#define ENCODER_RESOLUTIONS_RIGHT { 4 }
+
+//
+// TAP DANCE
+//
+#define TAPPING_TERM 185
+#define PERMISSIVE_HOLD
+
+//
+// CAPS WORD
+//
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
