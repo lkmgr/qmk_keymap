@@ -7,16 +7,27 @@ enum layers {
     _SYS,
 };
 
-// Tap-Hold keys
+// Mod-Tap keys
 #define SFT_SPC LSFT_T(KC_SPACE)
 #define SFT_ENT RSFT_T(KC_ENTER)
+
 // Layers
-#define L_LOWER MO(1)
-#define L_RAISE MO(2)
+// #define L_LOWER MO(_LOWER)
+// #define L_RAISE MO(_RAISE)
+#define L_LOWER OSL(_LOWER)
+#define L_RAISE OSL(_RAISE)
+
+// One Shot Keys
+#define OSM_CTL OSM(MOD_LCTL)
+#define OSM_GUI OSM(MOD_LGUI)
+#define OSM_ALT OSM(MOD_LALT)
+#define OSM_SFT OSM(MOD_LSFT)
+
 // Word operations
 #define WORD_L LCTL(KC_LEFT)
 #define WORD_R LCTL(KC_RIGHT)
 #define WORD_D LCTL(KC_BSPC)
+
 // Text shortcuts
 #define L_UNDO LSFT(KC_Z)
 #define L_CUT LSFT(KC_X)
@@ -28,9 +39,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_CLMK] = LAYOUT(
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,               KC_MPLY, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
         KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
-        KC_LCTL, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    XXXXXXX,    XXXXXXX, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ESC,
-                                   XXXXXXX, KC_LGUI, L_LOWER, SFT_SPC,    SFT_ENT, L_RAISE, KC_RALT, KC_APP
+        OSM_CTL, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
+        OSM_SFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    XXXXXXX,    XXXXXXX, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ESC,
+                                   XXXXXXX, OSM_GUI, L_LOWER, SFT_SPC,    SFT_ENT, L_RAISE, OSM_ALT, KC_APP
     ),
 
     [_LOWER] = LAYOUT(
@@ -51,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYS] = LAYOUT(
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,             XXXXXXX, QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, CM_TOGG, OS_TOGG, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
