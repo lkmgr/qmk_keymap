@@ -7,6 +7,19 @@ enum layers {
     _SYS,
 };
 
+enum combos {
+    ST_ESC,
+    NE_BSPC,
+};
+
+const uint16_t PROGMEM st_combo[] = {KC_S, KC_T, COMBO_END};
+const uint16_t PROGMEM ne_combo[] = {KC_N, KC_E, COMBO_END};
+
+combo_t key_combos[] = {
+  [ST_ESC] = COMBO(st_combo, KC_ESC),
+  [NE_BSPC] = COMBO(ne_combo, KC_BSPC),
+};
+
 // Mod-Tap keys
 #define SFT_SPC LSFT_T(KC_SPACE)
 #define SFT_ENT RSFT_T(KC_ENTER)

@@ -31,3 +31,14 @@
 // CAPS WORD
 //
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
+//
+// COMBOS
+//
+#define COMBO_TERM 40
+
+//
+// ONESHOT
+//
+#define ONESHOT_TAP_TOGGLE 3
+#define ONESHOT_TIMEOUT 4000
