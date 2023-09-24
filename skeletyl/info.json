@@ -13,7 +13,7 @@
     "bootloader": "rp2040",
     "url": "https://www.bastardkb.com/skeletyl",
     "usb": {
-        "vid": "0xFEED",
+        "vid": "0xA8F8",
         "pid": "0x1830",
         "device_version": "2.0.0"
     },
