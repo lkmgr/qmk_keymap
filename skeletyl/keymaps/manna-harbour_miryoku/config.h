@@ -18,9 +18,8 @@ K20,   K21,   K22,   K23,   K24,          K25,   K26,   K27,   K28,   K29, \
               K32,   K33,   K34,          K35,   K36,   K37 \
 )
 
-
 #undef TAPPING_TERM
 #define TAPPING_TERM 210
 
 #undef QUICK_TAP_TERM
-#define QUICK_TAP_TERM 110
+#define QUICK_TAP_TERM 120

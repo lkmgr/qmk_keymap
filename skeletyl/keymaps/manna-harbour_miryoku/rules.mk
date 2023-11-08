@@ -1,0 +1,1 @@
+MIRYOKU_NAV = VI
